@@ -89,6 +89,7 @@
 		D017431529D26E1E000429C7 /* msgiOS */ = {
 			isa = PBXGroup;
 			children = (
+				D0A9F3CA29D3E052005BEFBB /* Base */,
 				D0A9F3BF29D32D64005BEFBB /* ViewController */,
 				D0A9F3BE29D326DE005BEFBB /* image */,
 				D0A9F3B129D2F9C7005BEFBB /* Extension */,
@@ -96,7 +97,6 @@
 				D017431829D26E1E000429C7 /* SceneDelegate.swift */,
 				D017432229D26E1F000429C7 /* Assets.xcassets */,
 				D017432429D26E1F000429C7 /* LaunchScreen.storyboard */,
-				D017432D29D26EAB000429C7 /* BaseViewController.swift */,
 				D017432729D26E1F000429C7 /* Info.plist */,
 				D017431F29D26E1E000429C7 /* msgiOS.xcdatamodeld */,
 			);
@@ -131,6 +131,14 @@
 				D0A9F3C429D32F75005BEFBB /* FindPasswordViewcontroller.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D0A9F3CA29D3E052005BEFBB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D017432D29D26EAB000429C7 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		EAEB5E4C0F38280EA7419901 /* Pods */ = {

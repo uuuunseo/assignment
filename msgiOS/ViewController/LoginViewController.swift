@@ -2,6 +2,12 @@ import UIKit
 
 class LoginViewController: BaseViewController {
     
+    var eyeButton = UIButton(type: .custom)
+    
+    let chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: target, action: nil).then{
+        $0.tintColor = .black
+    }
+    
     let logoImageView = UIImageView().then{
         $0.image = UIImage(named: "Vector")
     }
@@ -30,6 +36,7 @@ class LoginViewController: BaseViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.black.cgColor
+        $0.isSecureTextEntry = true
         $0.leftPadding()
     }
     
@@ -78,6 +85,26 @@ class LoginViewController: BaseViewController {
         setup()
         addView()
         location()
+        setPasswordShownButtonImage()
+    }
+    
+    private func setPasswordShownButtonImage() {
+        eyeButton = UIButton.init(primaryAction: UIAction(handler: { [self]_ in
+            loginPasswordTextField.isSecureTextEntry.toggle()
+            self.eyeButton.isSelected.toggle()
+        }))
+        
+        var buttonConfiguration = UIButton.Configuration.plain()
+        buttonConfiguration.imagePadding = 10
+        buttonConfiguration.baseBackgroundColor = .clear
+        
+        eyeButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        self.eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
+        self.eyeButton.configuration = buttonConfiguration
+        eyeButton.tintColor = .gray
+        
+        self.loginPasswordTextField.rightView = eyeButton
+        self.loginPasswordTextField.rightViewMode = .always
     }
     
     @objc func tapLoginButton() {
@@ -104,6 +131,7 @@ class LoginViewController: BaseViewController {
     
     override func setup() {
         self.navigationItem.title = "로그인"
+        self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
         self.view.backgroundColor = .white
     }
     
