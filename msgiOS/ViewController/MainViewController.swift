@@ -29,6 +29,7 @@ class MainViewController: BaseViewController {
     override func location() {
         mainLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview()
         }
     }
 }

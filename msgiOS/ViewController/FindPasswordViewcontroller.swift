@@ -28,6 +28,7 @@ class FindPasswordViewController: BaseViewController {
     override func location() {
         findPasswordLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview()
         }
     }
 }

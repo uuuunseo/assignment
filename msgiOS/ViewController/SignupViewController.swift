@@ -12,6 +12,9 @@ class SignupViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addView()
+        setup()
+        location()
     }
     
     override func setup() {
@@ -26,6 +29,7 @@ class SignupViewController: BaseViewController {
     override func location() {
         signupLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview()
         }
     }
 }

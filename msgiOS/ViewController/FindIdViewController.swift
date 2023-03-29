@@ -11,6 +11,10 @@ class FindIdViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addView()
+        setup()
+        location()
     }
     
     override func setup() {
@@ -24,6 +28,7 @@ class FindIdViewController: BaseViewController{
     override func location() {
         findIdLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview()
         }
     }
 }
