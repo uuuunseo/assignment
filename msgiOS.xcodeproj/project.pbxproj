@@ -11,15 +11,12 @@
 		D017431729D26E1E000429C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017431629D26E1E000429C7 /* AppDelegate.swift */; };
 		D017431929D26E1E000429C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017431829D26E1E000429C7 /* SceneDelegate.swift */; };
 		D017431B29D26E1E000429C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017431A29D26E1E000429C7 /* LoginViewController.swift */; };
-		D017432129D26E1E000429C7 /* msgiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D017431F29D26E1E000429C7 /* msgiOS.xcdatamodeld */; };
 		D017432329D26E1F000429C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D017432229D26E1F000429C7 /* Assets.xcassets */; };
 		D017432629D26E1F000429C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D017432429D26E1F000429C7 /* LaunchScreen.storyboard */; };
 		D017432E29D26EAB000429C7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017432D29D26EAB000429C7 /* BaseViewController.swift */; };
-		D017433029D273DC000429C7 /* Vector.png in Resources */ = {isa = PBXBuildFile; fileRef = D017432F29D273DC000429C7 /* Vector.png */; };
-		D0A9F3B329D2F9E7005BEFBB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3B229D2F9E7005BEFBB /* UIColor.swift */; };
-		D0A9F3B529D2FA63005BEFBB /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3B429D2FA63005BEFBB /* extension.swift */; };
+		D0A9F3B329D2F9E7005BEFBB /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3B229D2F9E7005BEFBB /* UIColor+Hex.swift */; };
+		D0A9F3B529D2FA63005BEFBB /* UITextField+leftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */; };
 		D0A9F3BB29D32624005BEFBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3BA29D32624005BEFBB /* MainViewController.swift */; };
-		D0A9F3BD29D326D8005BEFBB /* Line 3.png in Resources */ = {isa = PBXBuildFile; fileRef = D0A9F3BC29D326D8005BEFBB /* Line 3.png */; };
 		D0A9F3C129D32D98005BEFBB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C029D32D98005BEFBB /* SignupViewController.swift */; };
 		D0A9F3C329D32E82005BEFBB /* FindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C229D32E82005BEFBB /* FindIdViewController.swift */; };
 		D0A9F3C529D32F75005BEFBB /* FindPasswordViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C429D32F75005BEFBB /* FindPasswordViewcontroller.swift */; };
@@ -31,16 +28,13 @@
 		D017431629D26E1E000429C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D017431829D26E1E000429C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D017431A29D26E1E000429C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D017432029D26E1E000429C7 /* msgiOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = msgiOS.xcdatamodel; sourceTree = "<group>"; };
 		D017432229D26E1F000429C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D017432529D26E1F000429C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D017432729D26E1F000429C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D017432D29D26EAB000429C7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		D017432F29D273DC000429C7 /* Vector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vector.png; sourceTree = "<group>"; };
-		D0A9F3B229D2F9E7005BEFBB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		D0A9F3B429D2FA63005BEFBB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		D0A9F3B229D2F9E7005BEFBB /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+leftPadding.swift"; sourceTree = "<group>"; };
 		D0A9F3BA29D32624005BEFBB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		D0A9F3BC29D326D8005BEFBB /* Line 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Line 3.png"; sourceTree = "<group>"; };
 		D0A9F3C029D32D98005BEFBB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		D0A9F3C229D32E82005BEFBB /* FindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdViewController.swift; sourceTree = "<group>"; };
 		D0A9F3C429D32F75005BEFBB /* FindPasswordViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewcontroller.swift; sourceTree = "<group>"; };
@@ -91,14 +85,12 @@
 			children = (
 				D0A9F3CA29D3E052005BEFBB /* Base */,
 				D0A9F3BF29D32D64005BEFBB /* ViewController */,
-				D0A9F3BE29D326DE005BEFBB /* image */,
 				D0A9F3B129D2F9C7005BEFBB /* Extension */,
 				D017431629D26E1E000429C7 /* AppDelegate.swift */,
 				D017431829D26E1E000429C7 /* SceneDelegate.swift */,
 				D017432229D26E1F000429C7 /* Assets.xcassets */,
 				D017432429D26E1F000429C7 /* LaunchScreen.storyboard */,
 				D017432729D26E1F000429C7 /* Info.plist */,
-				D017431F29D26E1E000429C7 /* msgiOS.xcdatamodeld */,
 			);
 			path = msgiOS;
 			sourceTree = "<group>";
@@ -106,19 +98,10 @@
 		D0A9F3B129D2F9C7005BEFBB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D0A9F3B229D2F9E7005BEFBB /* UIColor.swift */,
-				D0A9F3B429D2FA63005BEFBB /* extension.swift */,
+				D0A9F3B229D2F9E7005BEFBB /* UIColor+Hex.swift */,
+				D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		D0A9F3BE29D326DE005BEFBB /* image */ = {
-			isa = PBXGroup;
-			children = (
-				D017432F29D273DC000429C7 /* Vector.png */,
-				D0A9F3BC29D326D8005BEFBB /* Line 3.png */,
-			);
-			path = image;
 			sourceTree = "<group>";
 		};
 		D0A9F3BF29D32D64005BEFBB /* ViewController */ = {
@@ -210,10 +193,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A9F3BD29D326D8005BEFBB /* Line 3.png in Resources */,
 				D017432629D26E1F000429C7 /* LaunchScreen.storyboard in Resources */,
 				D017432329D26E1F000429C7 /* Assets.xcassets in Resources */,
-				D017433029D273DC000429C7 /* Vector.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,11 +250,10 @@
 				D0A9F3C129D32D98005BEFBB /* SignupViewController.swift in Sources */,
 				D017432E29D26EAB000429C7 /* BaseViewController.swift in Sources */,
 				D0A9F3C329D32E82005BEFBB /* FindIdViewController.swift in Sources */,
-				D0A9F3B529D2FA63005BEFBB /* extension.swift in Sources */,
-				D0A9F3B329D2F9E7005BEFBB /* UIColor.swift in Sources */,
+				D0A9F3B529D2FA63005BEFBB /* UITextField+leftPadding.swift in Sources */,
+				D0A9F3B329D2F9E7005BEFBB /* UIColor+Hex.swift in Sources */,
 				D017431B29D26E1E000429C7 /* LoginViewController.swift in Sources */,
 				D0A9F3C529D32F75005BEFBB /* FindPasswordViewcontroller.swift in Sources */,
-				D017432129D26E1E000429C7 /* msgiOS.xcdatamodeld in Sources */,
 				D017431729D26E1E000429C7 /* AppDelegate.swift in Sources */,
 				D017431929D26E1E000429C7 /* SceneDelegate.swift in Sources */,
 				D0A9F3BB29D32624005BEFBB /* MainViewController.swift in Sources */,
@@ -486,19 +466,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D017431F29D26E1E000429C7 /* msgiOS.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D017432029D26E1E000429C7 /* msgiOS.xcdatamodel */,
-			);
-			currentVersion = D017432029D26E1E000429C7 /* msgiOS.xcdatamodel */;
-			path = msgiOS.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D017430B29D26E1E000429C7 /* Project object */;
 }

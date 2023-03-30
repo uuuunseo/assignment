@@ -9,14 +9,6 @@ class SignupViewController: BaseViewController {
         $0.textColor = UIColor.gray
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        addView()
-        setup()
-        location()
-    }
-    
     override func setup() {
         self.navigationItem.title = "회원가입"
         self.view.backgroundColor = .white

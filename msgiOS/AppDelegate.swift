@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  msgiOS
-//
-//  Created by 정윤서 on 2023/03/28.
-//
-
 import UIKit
 import CoreData
 

@@ -15,14 +15,6 @@ class FindIdViewController: BaseViewController{
         $0.addTarget(target, action: #selector(tapFindIdButton), for: .touchUpInside)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        addView()
-        setup()
-        location()
-    }
-    
     @objc func tapFindIdButton() {
             dismiss(animated: true, completion: nil)
     }

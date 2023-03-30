@@ -9,14 +9,6 @@ class MainViewController: BaseViewController {
         $0.textColor = UIColor.gray
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setup()
-        addView()
-        location()
-    }
-    
     override func addView() {
         view.addSubview(mainLabel)
     }

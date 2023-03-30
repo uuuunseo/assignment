@@ -15,14 +15,6 @@ class FindPasswordViewController: BaseViewController {
         $0.addTarget(target, action: #selector(tapFindPasswordBackButton), for: .touchUpInside)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setup()
-        addView()
-        location()
-    }
-    
     @objc func tapFindPasswordBackButton() {
         dismiss(animated: true, completion: nil)
     }
