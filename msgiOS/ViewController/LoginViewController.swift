@@ -191,20 +191,20 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(loginPasswordTextField.snp.bottom).offset(24)
         }
         
-        signupQuestionLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(108)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(112)
-        }
-        
-        signupButton.snp.makeConstraints{
-            $0.leading.equalTo(signupQuestionLabel.snp.trailing).offset(8)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(106)
-        }
-        
         loginButton.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(24)
             $0.height.equalTo(52)
+        }
+        
+        signupQuestionLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(108)
+            $0.bottom.equalTo(loginButton.snp.top).offset(-36)
+        }
+        
+        signupButton.snp.makeConstraints{
+            $0.leading.equalTo(signupQuestionLabel.snp.trailing).offset(8)
+            $0.bottom.equalTo(loginButton.snp.top).offset(-30)
         }
     }
 }
