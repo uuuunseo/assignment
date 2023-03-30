@@ -4,7 +4,7 @@ class LoginViewController: BaseViewController {
     
     var eyeButton = UIButton(type: .custom)
     
-    let chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: target, action: nil).then{
+    lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
         $0.tintColor = .black
     }
     
@@ -40,22 +40,22 @@ class LoginViewController: BaseViewController {
         $0.leftPadding()
     }
     
-    let findIdButton = UIButton().then{
+    lazy var findIdButton = UIButton().then{
         $0.setTitle("아이디찾기", for: .normal)
         $0.setTitleColor(UIColor.gray, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        $0.addTarget(target, action: #selector(tapFindIdButton), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
     }
     
     let contourImageView = UIImageView().then{
         $0.image = UIImage(named: "Line 3")
     }
     
-    let resetPasswordButton = UIButton().then{
+    lazy var resetPasswordButton = UIButton().then{
         $0.setTitle("비밀번호재설정", for: .normal)
         $0.setTitleColor(UIColor.gray, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        $0.addTarget(target, action: #selector(tapFindPasswordButton), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(tapFindPasswordButton), for: .touchUpInside)
     }
     
     let signupQuestionLabel = UILabel().then{
@@ -64,18 +64,18 @@ class LoginViewController: BaseViewController {
         $0.textColor = .gray
     }
     
-    let signupButton = UIButton().then{
+    lazy var signupButton = UIButton().then{
         $0.setTitle("회원가입", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         $0.setTitleColor(UIColor.black, for: .normal)
-        $0.addTarget(target, action: #selector(tapSingnupButton), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(tapSingnupButton), for: .touchUpInside)
     }
     
-    let loginButton = UIButton().then{
+    lazy var loginButton = UIButton().then{
         $0.setTitle("로그인", for: .normal)
         $0.backgroundColor = UIColor(rgb: 0x6F7AEC)
         $0.layer.cornerRadius = 8
-        $0.addTarget(target, action: #selector(tapLoginButton), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(tapLoginButton), for: .touchUpInside)
     }
     
     
