@@ -12,7 +12,10 @@ class FindIdViewController: BaseViewController{
     let findIdBackButton = UIButton().then{
         $0.tintColor = .black
         $0.setImage(UIImage(systemName: "multiply"), for: .normal)
-        $0.addTarget(target, action: #selector(tapFindIdButton), for: .touchUpInside)
+    }
+    
+    override func addTarget() {
+        findIdBackButton.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
     }
     
     @objc func tapFindIdButton() {

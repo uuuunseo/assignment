@@ -9,9 +9,11 @@ class BaseViewController: UIViewController {
         setup()
         addView()
         location()
+        addTarget()
     }
     
     func setup(){}
     func addView(){}
     func location(){}
+    func addTarget(){}
 }

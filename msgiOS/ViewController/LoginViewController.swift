@@ -44,7 +44,6 @@ class LoginViewController: BaseViewController {
         $0.setTitle("아이디찾기", for: .normal)
         $0.setTitleColor(UIColor.gray, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        $0.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
     }
     
     let contourImageView = UIImageView().then{
@@ -55,7 +54,6 @@ class LoginViewController: BaseViewController {
         $0.setTitle("비밀번호재설정", for: .normal)
         $0.setTitleColor(UIColor.gray, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        $0.addTarget(self, action: #selector(tapFindPasswordButton), for: .touchUpInside)
     }
     
     let signupQuestionLabel = UILabel().then{
@@ -68,14 +66,12 @@ class LoginViewController: BaseViewController {
         $0.setTitle("회원가입", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         $0.setTitleColor(UIColor.black, for: .normal)
-        $0.addTarget(self, action: #selector(tapSingnupButton), for: .touchUpInside)
     }
     
     lazy var loginButton = UIButton().then{
         $0.setTitle("로그인", for: .normal)
         $0.backgroundColor = UIColor(rgb: 0x6F7AEC)
         $0.layer.cornerRadius = 8
-        $0.addTarget(self, action: #selector(tapLoginButton), for: .touchUpInside)
     }
     
     
@@ -102,6 +98,13 @@ class LoginViewController: BaseViewController {
         
         self.loginPasswordTextField.rightView = eyeButton
         self.loginPasswordTextField.rightViewMode = .always
+    }
+    
+    override func addTarget() {
+        loginButton.addTarget(self, action: #selector(tapLoginButton), for: .touchUpInside)
+        signupButton.addTarget(self, action: #selector(tapSingnupButton), for: .touchUpInside)
+        resetPasswordButton.addTarget(self, action: #selector(tapFindPasswordButton), for: .touchUpInside)
+        findIdButton.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
     }
     
     @objc func tapLoginButton() {

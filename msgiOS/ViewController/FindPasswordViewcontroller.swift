@@ -12,7 +12,10 @@ class FindPasswordViewController: BaseViewController {
     let findPasswordBackButton = UIButton().then{
         $0.tintColor = .black
         $0.setImage(UIImage(systemName: "multiply"), for: .normal)
-        $0.addTarget(target, action: #selector(tapFindPasswordBackButton), for: .touchUpInside)
+    }
+    
+    override func addTarget() {
+        findPasswordBackButton.addTarget(self, action: #selector(tapFindPasswordBackButton), for: .touchUpInside)
     }
     
     @objc func tapFindPasswordBackButton() {
