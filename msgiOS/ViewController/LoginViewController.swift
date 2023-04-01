@@ -86,9 +86,9 @@ class LoginViewController: BaseViewController {
     }
     
     private func setPasswordShownButtonImage() {
-        eyeButton = UIButton.init(primaryAction: UIAction(handler: { [self]_ in
-            loginPasswordTextField.isSecureTextEntry.toggle()
-            eyeButton.isSelected.toggle()
+        eyeButton = UIButton.init(primaryAction: UIAction(handler: { [weak self]_ in
+            self?.loginPasswordTextField.isSecureTextEntry.toggle()
+            self?.eyeButton.isSelected.toggle()
         }))
         
         var buttonConfiguration = UIButton.Configuration.plain()
