@@ -72,6 +72,7 @@
 		D017431529D26E1E000429C7 /* msgiOS */ = {
 			isa = PBXGroup;
 			children = (
+				D0FEEEE929DAAF11006C412C /* CustomView */,
 				D0A9F3CA29D3E052005BEFBB /* Base */,
 				D0A9F3BF29D32D64005BEFBB /* ViewController */,
 				D0A9F3B129D2F9C7005BEFBB /* Extension */,
@@ -111,6 +112,13 @@
 				D017432D29D26EAB000429C7 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		D0FEEEE929DAAF11006C412C /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

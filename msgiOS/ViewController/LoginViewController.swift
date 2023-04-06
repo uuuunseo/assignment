@@ -23,7 +23,7 @@ class LoginViewController: BaseViewController {
         $0.textColor = .gray
     }
     
-    let loginEmailTextField = UITextField().then{
+    lazy var loginEmailTextField = UITextField().then{
         $0.placeholder = "아이디"
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 1
@@ -31,7 +31,7 @@ class LoginViewController: BaseViewController {
         $0.leftPadding()
     }
     
-    let loginPasswordTextField = UITextField().then{
+    lazy var loginPasswordTextField = UITextField().then{
         $0.placeholder = "비밀번호"
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 1
@@ -70,15 +70,16 @@ class LoginViewController: BaseViewController {
     
     lazy var loginButton = UIButton().then{
         $0.setTitle("로그인", for: .normal)
-        $0.backgroundColor = UIColor(rgb: 0x6F7AEC)
+        $0.backgroundColor = .gray
         $0.layer.cornerRadius = 8
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setPasswordShownButtonImage()
+        loginEmailTextField.delegate = self
+        loginPasswordTextField.delegate = self
     }
     
     private func setPasswordShownButtonImage() {
@@ -101,7 +102,6 @@ class LoginViewController: BaseViewController {
     }
     
     override func addTarget() {
-        loginButton.addTarget(self, action: #selector(tapLoginButton), for: .touchUpInside)
         signupButton.addTarget(self, action: #selector(tapSingnupButton), for: .touchUpInside)
         resetPasswordButton.addTarget(self, action: #selector(tapFindPasswordButton), for: .touchUpInside)
         findIdButton.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
@@ -212,3 +212,23 @@ class LoginViewController: BaseViewController {
     }
 }
 
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if loginEmailTextField.text?.count == 0 || loginPasswordTextField.text?.count == 0 {
+            loginButton.isUserInteractionEnabled = false
+        } else {
+            loginButton.isUserInteractionEnabled = true
+            loginButton.addTarget(self, action: #selector(tapLoginButton), for: .touchUpInside)
+            loginButton.backgroundColor = UIColor(named: "ButtonColor")
+        }
+    }
+    
+    func textFieldShouldReturn (_ textField: UITextField) -> Bool {
+        switch textField {
+        case loginEmailTextField: loginPasswordTextField.becomeFirstResponder()
+        case loginPasswordTextField: loginPasswordTextField.resignFirstResponder()
+        default: break
+        }
+        return true
+    }
+}
