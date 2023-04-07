@@ -10,12 +10,6 @@ class SignupNicknameViewController: BaseViewController {
         $0.logoExplanationLabel.text = "사용하실 닉네임을 입력해주세요"
     }
     
-    let signupNicknameRequirements = UILabel().then{
-        $0.text = "닉네임은 최소 4자리에서 최대 20자까지 가능합니다"
-        $0.font = UIFont.systemFont(ofSize: 12)
-        $0.textColor = .gray
-    }
-    
     var nicknameTextField = DotoriTextField().then{
         $0.placeholder = "닉네임"
         $0.isSecureTextEntry = true
@@ -23,6 +17,12 @@ class SignupNicknameViewController: BaseViewController {
     
     var nextButton = DotoriButton().then{
         $0.setTitle("다음", for: .normal)
+    }
+    
+    let signupNicknameRequirements = UILabel().then{
+        $0.text = "닉네임은 최소 4자리에서 최대 20자까지 가능합니다"
+        $0.font = UIFont.systemFont(ofSize: 12)
+        $0.textColor = .gray
     }
     
     @objc func tapNextButton() {

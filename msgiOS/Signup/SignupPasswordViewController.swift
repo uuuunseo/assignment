@@ -14,12 +14,6 @@ class SignupPasswordViewController: BaseViewController {
         $0.logoExplanationLabel.text = "사용하실 비밀번호를 입력해주세요"
     }
     
-    let signupPasswordRequirements = UILabel().then{
-        $0.text = "비밀번호는 최소 8자에서 최대 40자까지 가능합니다."
-        $0.font = UIFont.systemFont(ofSize: 12)
-        $0.textColor = .gray
-    }
-    
     var passwordTextField = DotoriTextField().then{
         $0.placeholder = "비밀번호"
         $0.isSecureTextEntry = true
@@ -32,6 +26,12 @@ class SignupPasswordViewController: BaseViewController {
     
     var nextButton = DotoriButton().then{
         $0.setTitle("다음", for: .normal)
+    }
+    
+    let signupPasswordRequirements = UILabel().then{
+        $0.text = "비밀번호는 최소 8자에서 최대 40자까지 가능합니다."
+        $0.font = UIFont.systemFont(ofSize: 12)
+        $0.textColor = .gray
     }
     
     private func passwordShownButtonImage() {
