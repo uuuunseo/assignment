@@ -25,10 +25,20 @@ class SignupIdViewController: BaseViewController {
         $0.textColor = .gray
     }
     
+    @objc func tapNextButton() {
+        let next = SignupPasswordViewController()
+        navigationController?.pushViewController(next, animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        signupIdTextfield.delegate = self
+    }
+    
     override func setup() {
         self.navigationItem.title = "회원가입"
         self.view.backgroundColor = .white
-        signupIdTextfield.delegate = self
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
     }
     
@@ -57,15 +67,10 @@ class SignupIdViewController: BaseViewController {
             $0.height.equalTo(52)
         }
     }
-    
-    @objc func tapNextButton() {
-        let next = SignupPasswordViewController()
-        navigationController?.pushViewController(next, animated: true)
-    }
 }
 
 extension SignupIdViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         
         if let count = signupIdTextfield.text?.count, count >= 4 && count <= 20 {
             nextButton.backgroundColor = UIColor(named: "ButtonColor")
@@ -75,7 +80,5 @@ extension SignupIdViewController: UITextFieldDelegate {
             nextButton.backgroundColor = .gray
             nextButton.isUserInteractionEnabled = false
         }
-        
-        return true
     }
 }

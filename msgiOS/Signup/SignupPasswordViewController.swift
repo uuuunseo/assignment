@@ -72,15 +72,26 @@ class SignupPasswordViewController: BaseViewController {
         self.checkPasswordTextField.rightViewMode = .always
     }
     
+    @objc func tapNextButton() {
+        let next = SignupNicknameViewController()
+        navigationController?.pushViewController(next, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         passwordShownButtonImage()
         checkPasswordShownButtonImage()
+        
+        passwordTextField.delegate = self
+        checkPasswordTextField.delegate = self
+        
     }
     
     override func setup() {
+        self.navigationItem.title = "회원가입"
         self.view.backgroundColor = .white
+        self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
     }
     
     override func addView() {
@@ -114,6 +125,22 @@ class SignupPasswordViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(52)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(24)
+        }
+    }
+}
+
+extension SignupPasswordViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        if let count = passwordTextField.text?.count, count >= 8 && count <= 40 {
+            if passwordTextField.text == checkPasswordTextField.text {
+                nextButton.backgroundColor = UIColor(named: "ButtonColor")
+                nextButton.isUserInteractionEnabled = true
+                nextButton.addTarget(self, action: #selector(tapNextButton), for: .touchUpInside)
+            } else {
+                nextButton.backgroundColor = .gray
+                nextButton.isUserInteractionEnabled = false
+            }
         }
     }
 }
