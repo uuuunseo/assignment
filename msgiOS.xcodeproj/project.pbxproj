@@ -16,11 +16,15 @@
 		D0A9F3B329D2F9E7005BEFBB /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3B229D2F9E7005BEFBB /* UIColor+Hex.swift */; };
 		D0A9F3B529D2FA63005BEFBB /* UITextField+leftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */; };
 		D0A9F3BB29D32624005BEFBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3BA29D32624005BEFBB /* MainViewController.swift */; };
-		D0A9F3C129D32D98005BEFBB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C029D32D98005BEFBB /* SignupViewController.swift */; };
+		D0A9F3C129D32D98005BEFBB /* SignupIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C029D32D98005BEFBB /* SignupIdViewController.swift */; };
 		D0A9F3C329D32E82005BEFBB /* FindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C229D32E82005BEFBB /* FindIdViewController.swift */; };
 		D0A9F3C529D32F75005BEFBB /* FindPasswordViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C429D32F75005BEFBB /* FindPasswordViewcontroller.swift */; };
 		D0A9F3CF29D5A707005BEFBB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D0A9F3CE29D5A707005BEFBB /* SnapKit */; };
 		D0A9F3D229D80670005BEFBB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D0A9F3D129D80670005BEFBB /* Then */; };
+		D0E3665829DEDC9100C53B6E /* DotoriAuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3665729DEDC9100C53B6E /* DotoriAuthHeaderView.swift */; };
+		D0E3665A29DEF90200C53B6E /* DotoriButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3665929DEF90200C53B6E /* DotoriButton.swift */; };
+		D0E3665C29DF205200C53B6E /* DotoriTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3665B29DF205200C53B6E /* DotoriTextField.swift */; };
+		D0E3666029DF300800C53B6E /* SignupPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3665F29DF300800C53B6E /* SignupPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +39,13 @@
 		D0A9F3B229D2F9E7005BEFBB /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+leftPadding.swift"; sourceTree = "<group>"; };
 		D0A9F3BA29D32624005BEFBB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		D0A9F3C029D32D98005BEFBB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		D0A9F3C029D32D98005BEFBB /* SignupIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupIdViewController.swift; sourceTree = "<group>"; };
 		D0A9F3C229D32E82005BEFBB /* FindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdViewController.swift; sourceTree = "<group>"; };
 		D0A9F3C429D32F75005BEFBB /* FindPasswordViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewcontroller.swift; sourceTree = "<group>"; };
+		D0E3665729DEDC9100C53B6E /* DotoriAuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotoriAuthHeaderView.swift; sourceTree = "<group>"; };
+		D0E3665929DEF90200C53B6E /* DotoriButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotoriButton.swift; sourceTree = "<group>"; };
+		D0E3665B29DF205200C53B6E /* DotoriTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotoriTextField.swift; sourceTree = "<group>"; };
+		D0E3665F29DF300800C53B6E /* SignupPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +80,8 @@
 		D017431529D26E1E000429C7 /* msgiOS */ = {
 			isa = PBXGroup;
 			children = (
-				D0FEEEE929DAAF11006C412C /* CustomView */,
+				D0E3665E29DF2FD700C53B6E /* Signup */,
+				D0FEEEE929DAAF11006C412C /* Custom */,
 				D0A9F3CA29D3E052005BEFBB /* Base */,
 				D0A9F3BF29D32D64005BEFBB /* ViewController */,
 				D0A9F3B129D2F9C7005BEFBB /* Extension */,
@@ -99,7 +108,6 @@
 			children = (
 				D0A9F3BA29D32624005BEFBB /* MainViewController.swift */,
 				D017431A29D26E1E000429C7 /* LoginViewController.swift */,
-				D0A9F3C029D32D98005BEFBB /* SignupViewController.swift */,
 				D0A9F3C229D32E82005BEFBB /* FindIdViewController.swift */,
 				D0A9F3C429D32F75005BEFBB /* FindPasswordViewcontroller.swift */,
 			);
@@ -114,11 +122,23 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		D0FEEEE929DAAF11006C412C /* CustomView */ = {
+		D0E3665E29DF2FD700C53B6E /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				D0A9F3C029D32D98005BEFBB /* SignupIdViewController.swift */,
+				D0E3665F29DF300800C53B6E /* SignupPasswordViewController.swift */,
 			);
-			path = CustomView;
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		D0FEEEE929DAAF11006C412C /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D0E3665729DEDC9100C53B6E /* DotoriAuthHeaderView.swift */,
+				D0E3665929DEF90200C53B6E /* DotoriButton.swift */,
+				D0E3665B29DF205200C53B6E /* DotoriTextField.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,16 +219,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A9F3C129D32D98005BEFBB /* SignupViewController.swift in Sources */,
+				D0A9F3C129D32D98005BEFBB /* SignupIdViewController.swift in Sources */,
 				D017432E29D26EAB000429C7 /* BaseViewController.swift in Sources */,
 				D0A9F3C329D32E82005BEFBB /* FindIdViewController.swift in Sources */,
+				D0E3665A29DEF90200C53B6E /* DotoriButton.swift in Sources */,
 				D0A9F3B529D2FA63005BEFBB /* UITextField+leftPadding.swift in Sources */,
 				D0A9F3B329D2F9E7005BEFBB /* UIColor+Hex.swift in Sources */,
 				D017431B29D26E1E000429C7 /* LoginViewController.swift in Sources */,
 				D0A9F3C529D32F75005BEFBB /* FindPasswordViewcontroller.swift in Sources */,
+				D0E3665C29DF205200C53B6E /* DotoriTextField.swift in Sources */,
+				D0E3665829DEDC9100C53B6E /* DotoriAuthHeaderView.swift in Sources */,
 				D017431729D26E1E000429C7 /* AppDelegate.swift in Sources */,
 				D017431929D26E1E000429C7 /* SceneDelegate.swift in Sources */,
 				D0A9F3BB29D32624005BEFBB /* MainViewController.swift in Sources */,
+				D0E3666029DF300800C53B6E /* SignupPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

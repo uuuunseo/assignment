@@ -8,21 +8,6 @@ class LoginViewController: BaseViewController {
         $0.tintColor = .black
     }
     
-    let logoImageView = UIImageView().then{
-        $0.image = UIImage(named: "Vector")
-    }
-    
-    let titleLabel = UILabel().then{
-        $0.text = "Dotori"
-        $0.font = UIFont.boldSystemFont(ofSize: 32)
-    }
-    
-    let explanationLabel = UILabel().then{
-        $0.text = "더 편한 기숙사 생활을 위해"
-        $0.font = UIFont.systemFont(ofSize: 16)
-        $0.textColor = .gray
-    }
-    
     lazy var loginEmailTextField = UITextField().then{
         $0.placeholder = "아이디"
         $0.layer.cornerRadius = 8
@@ -46,20 +31,10 @@ class LoginViewController: BaseViewController {
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
     }
     
-    let contourImageView = UIImageView().then{
-        $0.image = UIImage(named: "Line 3")
-    }
-    
     lazy var resetPasswordButton = UIButton().then{
         $0.setTitle("비밀번호재설정", for: .normal)
         $0.setTitleColor(UIColor.gray, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-    }
-    
-    let signupQuestionLabel = UILabel().then{
-        $0.text = "아직 회원이 아니신가요?"
-        $0.font = UIFont.systemFont(ofSize: 12)
-        $0.textColor = .gray
     }
     
     lazy var signupButton = UIButton().then{
@@ -74,12 +49,16 @@ class LoginViewController: BaseViewController {
         $0.layer.cornerRadius = 8
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setPasswordShownButtonImage()
-        loginEmailTextField.delegate = self
-        loginPasswordTextField.delegate = self
+    let contourImageView = UIImageView().then{
+        $0.image = UIImage(named: "Line 3")
+    }
+    
+    let authHeaderView = DotoriAuthHeaderView()
+    
+    let signupQuestionLabel = UILabel().then{
+        $0.text = "아직 회원이 아니신가요?"
+        $0.font = UIFont.systemFont(ofSize: 12)
+        $0.textColor = .gray
     }
     
     private func setPasswordShownButtonImage() {
@@ -101,12 +80,6 @@ class LoginViewController: BaseViewController {
         self.loginPasswordTextField.rightViewMode = .always
     }
     
-    override func addTarget() {
-        signupButton.addTarget(self, action: #selector(tapSingnupButton), for: .touchUpInside)
-        resetPasswordButton.addTarget(self, action: #selector(tapFindPasswordButton), for: .touchUpInside)
-        findIdButton.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
-    }
-    
     @objc func tapLoginButton() {
         let main = MainViewController()
         navigationController?.setViewControllers([main], animated: true)
@@ -125,8 +98,16 @@ class LoginViewController: BaseViewController {
     }
     
     @objc func tapSingnupButton() {
-        let signup = SignupViewController()
+        let signup = SignupIdViewController()
         navigationController?.pushViewController(signup, animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setPasswordShownButtonImage()
+        loginEmailTextField.delegate = self
+        loginPasswordTextField.delegate = self
     }
     
     override func setup() {
@@ -135,10 +116,14 @@ class LoginViewController: BaseViewController {
         self.view.backgroundColor = .white
     }
     
+    override func addTarget() {
+        signupButton.addTarget(self, action: #selector(tapSingnupButton), for: .touchUpInside)
+        resetPasswordButton.addTarget(self, action: #selector(tapFindPasswordButton), for: .touchUpInside)
+        findIdButton.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
+    }
+    
     override func addView() {
-        view.addSubview(titleLabel)
-        view.addSubview(logoImageView)
-        view.addSubview(explanationLabel)
+        view.addSubview(authHeaderView)
         view.addSubview(loginEmailTextField)
         view.addSubview(loginPasswordTextField)
         view.addSubview(findIdButton)
@@ -150,25 +135,10 @@ class LoginViewController: BaseViewController {
     }
     
     override func location() {
-        titleLabel.snp.makeConstraints{
-            $0.leading.equalTo(logoImageView.snp.trailing).offset(8)
-            $0.top.equalToSuperview().inset(131)
-        }
-        
-        logoImageView.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(24)
-            $0.top.equalToSuperview().inset(121)
-            $0.width.height.equalTo(48)
-        }
-        
-        explanationLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(24)
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-        }
         
         loginEmailTextField.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.top.equalTo(explanationLabel.snp.bottom).offset(54)
+            $0.top.equalTo(authHeaderView.snp.bottom).offset(274)
             $0.height.equalTo(52)
         }
         

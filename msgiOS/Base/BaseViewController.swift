@@ -7,13 +7,13 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         setup()
+        addTarget()
         addView()
         location()
-        addTarget()
     }
     
     func setup(){}
+    func addTarget(){}
     func addView(){}
     func location(){}
-    func addTarget(){}
 }
