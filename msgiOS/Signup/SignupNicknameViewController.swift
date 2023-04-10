@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 class SignupNicknameViewController: BaseViewController {
@@ -6,20 +5,20 @@ class SignupNicknameViewController: BaseViewController {
         $0.tintColor = .black
     }
     
-    var authHeader = DotoriAuthHeaderView().then{
+    private let authHeader = DotoriAuthHeaderView().then{
         $0.logoExplanationLabel.text = "사용하실 닉네임을 입력해주세요"
     }
     
-    var nicknameTextField = DotoriTextField().then{
+    private let nicknameTextField = DotoriTextField().then{
         $0.placeholder = "닉네임"
         $0.isSecureTextEntry = true
     }
     
-    var nextButton = DotoriButton().then{
+    private let nextButton = DotoriButton().then{
         $0.setTitle("다음", for: .normal)
     }
     
-    let signupNicknameRequirements = UILabel().then{
+    private let signupNicknameRequirements = UILabel().then{
         $0.text = "닉네임은 최소 4자리에서 최대 20자까지 가능합니다"
         $0.font = UIFont.systemFont(ofSize: 12)
         $0.textColor = .gray
@@ -37,7 +36,6 @@ class SignupNicknameViewController: BaseViewController {
     }
     
     override func setup() {
-        self.view.backgroundColor = .white
         self.navigationItem.title = "회원가입"
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
     }

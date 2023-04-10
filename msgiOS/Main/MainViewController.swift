@@ -1,9 +1,8 @@
-import Foundation
 import UIKit
 
 class MainViewController: BaseViewController {
     
-    let mainLabel = UILabel().then{
+    private let mainLabel = UILabel().then{
         $0.text = "메인"
         $0.font = UIFont.systemFont(ofSize: 20)
         $0.textColor = UIColor.gray
@@ -15,13 +14,11 @@ class MainViewController: BaseViewController {
     
     override func setup() {
         self.navigationItem.title = "메인"
-        self.view.backgroundColor = .white
     }
     
     override func location() {
         mainLabel.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
-            $0.centerX.equalToSuperview()
+            $0.center.equalToSuperview()
         }
     }
 }

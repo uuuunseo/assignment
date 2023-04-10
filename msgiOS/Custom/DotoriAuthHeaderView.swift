@@ -1,20 +1,19 @@
-import Foundation
 import UIKit
 import Then
 import SnapKit
 
 public final class DotoriAuthHeaderView: UIView {
     
-    var logoImageView = UIImageView().then{
+    private let logoImageView = UIImageView().then{
         $0.image = UIImage(named: "Vector")
     }
     
-    var logoTitleLabel = UILabel().then{
+    private let logoTitleLabel = UILabel().then{
         $0.text = "Dotori"
         $0.font = UIFont.boldSystemFont(ofSize: 32)
     }
     
-    var logoExplanationLabel = UILabel().then{
+    private let logoExplanationLabel = UILabel().then{
         $0.text = "더 편한 기숙사 생활을 위해"
         $0.font = UIFont.systemFont(ofSize: 16)
         $0.textColor = .gray

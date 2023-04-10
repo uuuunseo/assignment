@@ -8,7 +8,7 @@ class LoginViewController: BaseViewController {
         $0.tintColor = .black
     }
     
-    lazy var loginEmailTextField = UITextField().then{
+    private let loginEmailTextField = UITextField().then{
         $0.placeholder = "아이디"
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 1
@@ -16,7 +16,7 @@ class LoginViewController: BaseViewController {
         $0.leftPadding()
     }
     
-    lazy var loginPasswordTextField = UITextField().then{
+    private let loginPasswordTextField = UITextField().then{
         $0.placeholder = "비밀번호"
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 1
@@ -49,13 +49,13 @@ class LoginViewController: BaseViewController {
         $0.layer.cornerRadius = 8
     }
     
-    let contourImageView = UIImageView().then{
+    private let contourImageView = UIImageView().then{
         $0.image = UIImage(named: "Line 3")
     }
     
-    let authHeaderView = DotoriAuthHeaderView()
+    private let authHeaderView = DotoriAuthHeaderView()
     
-    let signupQuestionLabel = UILabel().then{
+    private let signupQuestionLabel = UILabel().then{
         $0.text = "아직 회원이 아니신가요?"
         $0.font = UIFont.systemFont(ofSize: 12)
         $0.textColor = .gray
@@ -72,8 +72,8 @@ class LoginViewController: BaseViewController {
         buttonConfiguration.baseBackgroundColor = .clear
         
         eyeButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        self.eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
-        self.eyeButton.configuration = buttonConfiguration
+        eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
+        eyeButton.configuration = buttonConfiguration
         eyeButton.tintColor = .gray
         
         self.loginPasswordTextField.rightView = eyeButton
@@ -113,7 +113,6 @@ class LoginViewController: BaseViewController {
     override func setup() {
         self.navigationItem.title = "로그인"
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
-        self.view.backgroundColor = .white
     }
     
     override func addTarget() {

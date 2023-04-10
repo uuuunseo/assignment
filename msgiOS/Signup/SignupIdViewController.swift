@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 class SignupIdViewController: BaseViewController {
@@ -7,11 +6,11 @@ class SignupIdViewController: BaseViewController {
         $0.tintColor = .black
     }
     
-    var authHeader = DotoriAuthHeaderView().then{
+    private let authHeader = DotoriAuthHeaderView().then{
         $0.logoExplanationLabel.text = "사용하실 아이디를 입력해주세요"
     }
     
-    var signupIdTextfield = DotoriTextField().then{
+    private let signupIdTextfield = DotoriTextField().then{
         $0.placeholder = "아이디"
     }
     
@@ -19,7 +18,7 @@ class SignupIdViewController: BaseViewController {
         $0.setTitle("다음", for: .normal)
     }
     
-    let signupIdRequirements = UILabel().then{
+    private let signupIdRequirements = UILabel().then{
         $0.text = "아이디는 최소 4자에서 최대 20자까지 가능합니다."
         $0.font = UIFont.systemFont(ofSize: 12)
         $0.textColor = .gray
@@ -38,7 +37,6 @@ class SignupIdViewController: BaseViewController {
     
     override func setup() {
         self.navigationItem.title = "회원가입"
-        self.view.backgroundColor = .white
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
     }
     

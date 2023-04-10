@@ -6,6 +6,9 @@ import SnapKit
 class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
+        
+        self.view.backgroundColor = .white
+        
         setup()
         addTarget()
         addView()

@@ -1,7 +1,7 @@
-import Foundation
 import UIKit
 
 class SignupCompleteViewController: BaseViewController {
+    
     lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
         $0.tintColor = .black
     }
@@ -11,12 +11,12 @@ class SignupCompleteViewController: BaseViewController {
         $0.backgroundColor = UIColor(named: "ButtonColor")
     }
     
-    let completeTitleLabel = UILabel().then{
+    private let completeTitleLabel = UILabel().then{
         $0.text = "완료"
         $0.font = UIFont.boldSystemFont(ofSize: 32)
     }
     
-    let completeSubTitleLabel = UILabel().then{
+    private let completeSubTitleLabel = UILabel().then{
         $0.text = "회원가입이 완료되었습니다 \n 로그인을 이어서 진행해주세요!"
         $0.textColor = .gray
         $0.font = UIFont.systemFont(ofSize: 16)
@@ -31,7 +31,6 @@ class SignupCompleteViewController: BaseViewController {
     }
     
     override func setup() {
-        self.view.backgroundColor = .white
         self.navigationItem.title = "회원가입"
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
     }
@@ -54,8 +53,7 @@ class SignupCompleteViewController: BaseViewController {
         }
         
         completeSubTitleLabel.snp.makeConstraints{
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview()
+            $0.center.equalToSuperview()
         }
         
         completeTitleLabel.snp.makeConstraints{

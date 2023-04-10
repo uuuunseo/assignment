@@ -1,15 +1,14 @@
-import Foundation
 import UIKit
 
 class FindIdViewController: BaseViewController{
     
-    let findIdLabel = UILabel().then{
+    private let findIdLabel = UILabel().then{
         $0.text = "아이디 찾기"
         $0.font = UIFont.systemFont(ofSize: 20)
         $0.textColor = UIColor.gray
     }
     
-    let findIdBackButton = UIButton().then{
+    private let findIdBackButton = UIButton().then{
         $0.tintColor = .black
         $0.setImage(UIImage(systemName: "multiply"), for: .normal)
     }

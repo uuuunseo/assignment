@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 class SignupPasswordViewController: BaseViewController {
@@ -10,25 +9,25 @@ class SignupPasswordViewController: BaseViewController {
         $0.tintColor = .black
     }
     
-    var authHeader = DotoriAuthHeaderView().then{
-        $0.logoExplanationLabel.text = "사용하실 비밀번호를 입력해주세요"
-    }
-    
-    var passwordTextField = DotoriTextField().then{
-        $0.placeholder = "비밀번호"
-        $0.isSecureTextEntry = true
-    }
-    
-    var checkPasswordTextField = DotoriTextField().then{
-        $0.placeholder = "비밀번호 재입력"
-        $0.isSecureTextEntry = true
-    }
-    
     var nextButton = DotoriButton().then{
         $0.setTitle("다음", for: .normal)
     }
     
-    let signupPasswordRequirements = UILabel().then{
+    private let authHeader = DotoriAuthHeaderView().then{
+        $0.logoExplanationLabel.text = "사용하실 비밀번호를 입력해주세요"
+    }
+    
+    private let passwordTextField = DotoriTextField().then{
+        $0.placeholder = "비밀번호"
+        $0.isSecureTextEntry = true
+    }
+    
+    private let checkPasswordTextField = DotoriTextField().then{
+        $0.placeholder = "비밀번호 재입력"
+        $0.isSecureTextEntry = true
+    }
+    
+    private let signupPasswordRequirements = UILabel().then{
         $0.text = "비밀번호는 최소 8자에서 최대 40자까지 가능합니다."
         $0.font = UIFont.systemFont(ofSize: 12)
         $0.textColor = .gray
@@ -64,7 +63,7 @@ class SignupPasswordViewController: BaseViewController {
         buttonConfiguration.baseBackgroundColor = .clear
         
         checkPasswordEyeButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        self.checkPasswordEyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
+        checkPasswordEyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
         self.checkPasswordEyeButton.configuration = buttonConfiguration
         checkPasswordEyeButton.tintColor = .gray
         
@@ -90,7 +89,6 @@ class SignupPasswordViewController: BaseViewController {
     
     override func setup() {
         self.navigationItem.title = "회원가입"
-        self.view.backgroundColor = .white
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
     }
     

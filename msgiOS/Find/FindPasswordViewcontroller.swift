@@ -1,15 +1,14 @@
-import Foundation
 import UIKit
 
 class FindPasswordViewController: BaseViewController {
     
-    let findPasswordLabel = UILabel().then{
+    private let findPasswordLabel = UILabel().then{
         $0.text = "비밀번호 찾기"
         $0.font = UIFont.systemFont(ofSize: 20)
         $0.textColor = UIColor.gray
     }
     
-    let findPasswordBackButton = UIButton().then{
+    private let findPasswordBackButton = UIButton().then{
         $0.tintColor = .black
         $0.setImage(UIImage(systemName: "multiply"), for: .normal)
     }

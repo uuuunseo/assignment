@@ -1,6 +1,4 @@
-import Foundation
 import UIKit
-import SnapKit
 
 public final class DotoriTextField: UITextField {
     
