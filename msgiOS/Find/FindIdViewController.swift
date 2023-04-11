@@ -1,6 +1,6 @@
 import UIKit
 
-class FindIdViewController: BaseViewController{
+final class FindIdViewController: BaseViewController{
     
     private let findIdLabel = UILabel().then{
         $0.text = "아이디 찾기"
@@ -18,29 +18,22 @@ class FindIdViewController: BaseViewController{
     }
     
     @objc func tapFindIdButton() {
-            dismiss(animated: true, completion: nil)
-    }
-    
-    override func setup() {
-        self.view.backgroundColor = .white
+        dismiss(animated: true, completion: nil)
     }
     
     override func addView() {
-        view.addSubview(findIdLabel)
-        view.addSubview(findIdBackButton)
+        view.addSubviews(findIdLabel, findIdBackButton)
     }
     
     override func location() {
         findIdLabel.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
-            $0.centerX.equalToSuperview()
+            $0.center.equalToSuperview()
         }
         
         findIdBackButton.snp.makeConstraints{
             $0.leading.equalToSuperview().inset(32)
             $0.top.equalToSuperview().inset(32)
-            $0.height.equalTo(28)
-            $0.width.equalTo(28)
+            $0.size.equalTo(28)
         }
     }
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class MainViewController: BaseViewController {
+final class MainViewController: BaseViewController {
     
     private let mainLabel = UILabel().then{
         $0.text = "메인"
@@ -9,7 +9,7 @@ class MainViewController: BaseViewController {
     }
     
     override func addView() {
-        view.addSubview(mainLabel)
+        view.addSubviews(mainLabel)
     }
     
     override func setup() {

@@ -4,29 +4,29 @@ import SnapKit
 
 public final class DotoriAuthHeaderView: UIView {
     
-    private let logoImageView = UIImageView().then{
+    let logoImageView = UIImageView().then{
         $0.image = UIImage(named: "Vector")
     }
     
-    private let logoTitleLabel = UILabel().then{
+    let logoTitleLabel = UILabel().then{
         $0.text = "Dotori"
         $0.font = UIFont.boldSystemFont(ofSize: 32)
     }
     
-    private let logoExplanationLabel = UILabel().then{
-        $0.text = "더 편한 기숙사 생활을 위해"
+    let logoExplanationLabel = UILabel().then{
         $0.font = UIFont.systemFont(ofSize: 16)
         $0.textColor = .gray
     }
     
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
+    public init(text: String) {
+        super.init(frame: .zero)
+        self.logoExplanationLabel.text = text
         
         setup()
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+            super.init(coder: coder)
     }
     
     func setup() {

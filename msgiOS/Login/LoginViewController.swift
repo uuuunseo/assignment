@@ -1,6 +1,6 @@
 import UIKit
 
-class LoginViewController: BaseViewController {
+final class LoginViewController: BaseViewController {
     
     var eyeButton = UIButton(type: .custom)
     
@@ -8,22 +8,9 @@ class LoginViewController: BaseViewController {
         $0.tintColor = .black
     }
     
-    private let loginEmailTextField = UITextField().then{
-        $0.placeholder = "아이디"
-        $0.layer.cornerRadius = 8
-        $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.black.cgColor
-        $0.leftPadding()
-    }
+    private let loginEmailTextField = DotoriTextField(placeholder: "아이디")
     
-    private let loginPasswordTextField = UITextField().then{
-        $0.placeholder = "비밀번호"
-        $0.layer.cornerRadius = 8
-        $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.black.cgColor
-        $0.isSecureTextEntry = true
-        $0.leftPadding()
-    }
+    private let loginPasswordTextField = DotoriTextField(placeholder: "비밀번호")
     
     lazy var findIdButton = UIButton().then{
         $0.setTitle("아이디찾기", for: .normal)
@@ -53,7 +40,7 @@ class LoginViewController: BaseViewController {
         $0.image = UIImage(named: "Line 3")
     }
     
-    private let authHeaderView = DotoriAuthHeaderView()
+    private let authHeaderView = DotoriAuthHeaderView(text: "더 편한 기숙사 생활을 위해")
     
     private let signupQuestionLabel = UILabel().then{
         $0.text = "아직 회원이 아니신가요?"
@@ -106,6 +93,7 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         
         setPasswordShownButtonImage()
+        
         loginEmailTextField.delegate = self
         loginPasswordTextField.delegate = self
     }
@@ -122,15 +110,7 @@ class LoginViewController: BaseViewController {
     }
     
     override func addView() {
-        view.addSubview(authHeaderView)
-        view.addSubview(loginEmailTextField)
-        view.addSubview(loginPasswordTextField)
-        view.addSubview(findIdButton)
-        view.addSubview(contourImageView)
-        view.addSubview(resetPasswordButton)
-        view.addSubview(signupQuestionLabel)
-        view.addSubview(signupButton)
-        view.addSubview(loginButton)
+        view.addSubviews(authHeaderView, loginEmailTextField, loginPasswordTextField, findIdButton, contourImageView, resetPasswordButton, signupQuestionLabel, signupButton, loginButton)
     }
     
     override func location() {

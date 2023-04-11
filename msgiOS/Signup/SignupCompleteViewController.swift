@@ -1,13 +1,12 @@
 import UIKit
 
-class SignupCompleteViewController: BaseViewController {
+final class SignupCompleteViewController: BaseViewController {
     
     lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
         $0.tintColor = .black
     }
     
-    var goLoginButton = DotoriButton().then{
-        $0.setTitle("로그인 하러가기", for: .normal)
+    var goLoginButton = DotoriButton(setTitle: "로그인 하러가기").then{
         $0.backgroundColor = UIColor(named: "ButtonColor")
     }
     
@@ -26,8 +25,8 @@ class SignupCompleteViewController: BaseViewController {
     
     
     @objc func tapGoLoginButton() {
-        let login = LoginViewController()
-        navigationController?.pushViewController(login, animated: true)
+        let loginVC = LoginViewController()
+        navigationController?.pushViewController(loginVC, animated: true)
     }
     
     override func setup() {
@@ -36,9 +35,7 @@ class SignupCompleteViewController: BaseViewController {
     }
     
     override func addView() {
-        view.addSubview(goLoginButton)
-        view.addSubview(completeTitleLabel)
-        view.addSubview(completeSubTitleLabel)
+        view.addSubviews(goLoginButton, completeTitleLabel, completeSubTitleLabel)
     }
     
     override func addTarget() {

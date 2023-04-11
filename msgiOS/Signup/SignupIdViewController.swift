@@ -1,22 +1,16 @@
 import UIKit
 
-class SignupIdViewController: BaseViewController {
+final class SignupIdViewController: BaseViewController {
     
     lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
         $0.tintColor = .black
     }
     
-    private let authHeader = DotoriAuthHeaderView().then{
-        $0.logoExplanationLabel.text = "사용하실 아이디를 입력해주세요"
-    }
+    private let authHeader = DotoriAuthHeaderView(text: "사용하실 아이디를 입력해주세요")
     
-    private let signupIdTextfield = DotoriTextField().then{
-        $0.placeholder = "아이디"
-    }
+    private let signupIdTextfield = DotoriTextField(placeholder: "아이디")
     
-    var nextButton = DotoriButton().then{
-        $0.setTitle("다음", for: .normal)
-    }
+    var nextButton = DotoriButton(setTitle: "다음")
     
     private let signupIdRequirements = UILabel().then{
         $0.text = "아이디는 최소 4자에서 최대 20자까지 가능합니다."
@@ -25,8 +19,8 @@ class SignupIdViewController: BaseViewController {
     }
     
     @objc func tapNextButton() {
-        let next = SignupPasswordViewController()
-        navigationController?.pushViewController(next, animated: true)
+        let passwordVC = SignupPasswordViewController()
+        navigationController?.pushViewController(passwordVC, animated: true)
     }
     
     override func viewDidLoad() {
@@ -41,10 +35,7 @@ class SignupIdViewController: BaseViewController {
     }
     
     override func addView() {
-        view.addSubview(authHeader)
-        view.addSubview(signupIdRequirements)
-        view.addSubview(signupIdTextfield)
-        view.addSubview(nextButton)
+        view.addSubviews(authHeader, signupIdRequirements, signupIdTextfield, nextButton)
     }
     
     override func location() {

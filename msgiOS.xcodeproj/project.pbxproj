@@ -13,6 +13,7 @@
 		D017432329D26E1F000429C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D017432229D26E1F000429C7 /* Assets.xcassets */; };
 		D017432629D26E1F000429C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D017432429D26E1F000429C7 /* LaunchScreen.storyboard */; };
 		D017432E29D26EAB000429C7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017432D29D26EAB000429C7 /* BaseViewController.swift */; };
+		D017F3C129E59F4100B846E9 /* UIView+addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017F3C029E59F4100B846E9 /* UIView+addSubviews.swift */; };
 		D0A9F3B529D2FA63005BEFBB /* UITextField+leftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */; };
 		D0A9F3BB29D32624005BEFBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3BA29D32624005BEFBB /* MainViewController.swift */; };
 		D0A9F3C129D32D98005BEFBB /* SignupIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C029D32D98005BEFBB /* SignupIdViewController.swift */; };
@@ -37,6 +38,7 @@
 		D017432529D26E1F000429C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D017432729D26E1F000429C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D017432D29D26EAB000429C7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D017F3C029E59F4100B846E9 /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
 		D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+leftPadding.swift"; sourceTree = "<group>"; };
 		D0A9F3BA29D32624005BEFBB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D0A9F3C029D32D98005BEFBB /* SignupIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupIdViewController.swift; sourceTree = "<group>"; };
@@ -89,8 +91,8 @@
 				D0FEEEE929DAAF11006C412C /* Custom */,
 				D0A9F3CA29D3E052005BEFBB /* Base */,
 				D0A9F3B129D2F9C7005BEFBB /* Extension */,
-				D017431629D26E1E000429C7 /* AppDelegate.swift */,
 				D017431829D26E1E000429C7 /* SceneDelegate.swift */,
+				D017431629D26E1E000429C7 /* AppDelegate.swift */,
 				D017432229D26E1F000429C7 /* Assets.xcassets */,
 				D017432429D26E1F000429C7 /* LaunchScreen.storyboard */,
 				D017432729D26E1F000429C7 /* Info.plist */,
@@ -101,6 +103,7 @@
 		D0A9F3B129D2F9C7005BEFBB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D017F3C029E59F4100B846E9 /* UIView+addSubviews.swift */,
 				D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */,
 			);
 			path = Extension;
@@ -246,6 +249,7 @@
 				D0EDD66529E05A4D00A78FF2 /* SignupNicknameViewController.swift in Sources */,
 				D0EDD66729E060E200A78FF2 /* SignupCompleteViewController.swift in Sources */,
 				D017431B29D26E1E000429C7 /* LoginViewController.swift in Sources */,
+				D017F3C129E59F4100B846E9 /* UIView+addSubviews.swift in Sources */,
 				D0A9F3C529D32F75005BEFBB /* FindPasswordViewcontroller.swift in Sources */,
 				D0E3665C29DF205200C53B6E /* DotoriTextField.swift in Sources */,
 				D0E3665829DEDC9100C53B6E /* DotoriAuthHeaderView.swift in Sources */,

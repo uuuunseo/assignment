@@ -1,22 +1,18 @@
 import UIKit
 
-class SignupNicknameViewController: BaseViewController {
+final class SignupNicknameViewController: BaseViewController {
+    
     lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
         $0.tintColor = .black
     }
     
-    private let authHeader = DotoriAuthHeaderView().then{
-        $0.logoExplanationLabel.text = "사용하실 닉네임을 입력해주세요"
-    }
+    private let authHeader = DotoriAuthHeaderView(text: "사용하실 닉네임을 입력해주세요")
     
-    private let nicknameTextField = DotoriTextField().then{
-        $0.placeholder = "닉네임"
+    private let nicknameTextField = DotoriTextField(placeholder: "닉네임").then{
         $0.isSecureTextEntry = true
     }
     
-    private let nextButton = DotoriButton().then{
-        $0.setTitle("다음", for: .normal)
-    }
+    private let nextButton = DotoriButton(setTitle: "다음")
     
     private let signupNicknameRequirements = UILabel().then{
         $0.text = "닉네임은 최소 4자리에서 최대 20자까지 가능합니다"
@@ -25,8 +21,8 @@ class SignupNicknameViewController: BaseViewController {
     }
     
     @objc func tapNextButton() {
-        let next = SignupCompleteViewController()
-        navigationController?.pushViewController(next, animated: true)
+        let completeVC = SignupCompleteViewController()
+        navigationController?.pushViewController(completeVC, animated: true)
     }
     
     override func viewDidLoad() {
@@ -41,10 +37,7 @@ class SignupNicknameViewController: BaseViewController {
     }
     
     override func addView() {
-        view.addSubview(authHeader)
-        view.addSubview(signupNicknameRequirements)
-        view.addSubview(nicknameTextField)
-        view.addSubview(nextButton)
+        view.addSubviews(authHeader, signupNicknameRequirements, nicknameTextField, nextButton)
     }
     
     override func location() {

@@ -1,6 +1,6 @@
 import UIKit
 
-class FindPasswordViewController: BaseViewController {
+final class FindPasswordViewController: BaseViewController {
     
     private let findPasswordLabel = UILabel().then{
         $0.text = "비밀번호 찾기"
@@ -21,26 +21,19 @@ class FindPasswordViewController: BaseViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    override func setup() {
-        self.view.backgroundColor = .white
-    }
-    
     override func addView() {
-        view.addSubview(findPasswordLabel)
-        view.addSubview(findPasswordBackButton)
+        view.addSubviews(findPasswordLabel, findPasswordBackButton)
     }
     
     override func location() {
         findPasswordLabel.snp.makeConstraints{
-            $0.centerY.equalToSuperview()
-            $0.centerX.equalToSuperview()
+            $0.center.equalToSuperview()
         }
         
         findPasswordBackButton.snp.makeConstraints{
             $0.leading.equalToSuperview().inset(32)
             $0.top.equalToSuperview().inset(79)
-            $0.height.equalTo(28)
-            $0.width.equalTo(28)
+            $0.size.equalTo(28)
         }
     }
 }

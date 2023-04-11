@@ -2,8 +2,9 @@ import UIKit
 
 public final class DotoriTextField: UITextField {
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
+    public init(placeholder: String) {
+        super.init(frame: .zero)
+        self.placeholder = placeholder
         
         setup()
     }
@@ -15,7 +16,6 @@ public final class DotoriTextField: UITextField {
     }
     
     func setup(){
-        placeholder = "아이디"
         layer.cornerRadius = 8
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor

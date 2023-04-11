@@ -1,6 +1,6 @@
 import UIKit
 
-class SignupPasswordViewController: BaseViewController {
+final class SignupPasswordViewController: BaseViewController {
     
     var passwordEyeButton = UIButton(type: .custom)
     var checkPasswordEyeButton = UIButton(type: .custom)
@@ -9,21 +9,15 @@ class SignupPasswordViewController: BaseViewController {
         $0.tintColor = .black
     }
     
-    var nextButton = DotoriButton().then{
-        $0.setTitle("다음", for: .normal)
-    }
+    var nextButton = DotoriButton(setTitle: "다음")
     
-    private let authHeader = DotoriAuthHeaderView().then{
-        $0.logoExplanationLabel.text = "사용하실 비밀번호를 입력해주세요"
-    }
+    private let authHeader = DotoriAuthHeaderView(text: "사용하실 비밀번호를 입력해주세요")
     
-    private let passwordTextField = DotoriTextField().then{
-        $0.placeholder = "비밀번호"
+    private let passwordTextField = DotoriTextField(placeholder: "비밀번호").then{
         $0.isSecureTextEntry = true
     }
     
-    private let checkPasswordTextField = DotoriTextField().then{
-        $0.placeholder = "비밀번호 재입력"
+    private let checkPasswordTextField = DotoriTextField(placeholder: "비밀번호 재입력").then{
         $0.isSecureTextEntry = true
     }
     
@@ -44,8 +38,8 @@ class SignupPasswordViewController: BaseViewController {
         buttonConfiguration.baseBackgroundColor = .clear
         
         passwordEyeButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        self.passwordEyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
-        self.passwordEyeButton.configuration = buttonConfiguration
+        passwordEyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
+        passwordEyeButton.configuration = buttonConfiguration
         passwordEyeButton.tintColor = .gray
         
         self.passwordTextField.rightView = passwordEyeButton
@@ -64,7 +58,7 @@ class SignupPasswordViewController: BaseViewController {
         
         checkPasswordEyeButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
         checkPasswordEyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
-        self.checkPasswordEyeButton.configuration = buttonConfiguration
+        checkPasswordEyeButton.configuration = buttonConfiguration
         checkPasswordEyeButton.tintColor = .gray
         
         self.checkPasswordTextField.rightView = checkPasswordEyeButton
@@ -72,8 +66,8 @@ class SignupPasswordViewController: BaseViewController {
     }
     
     @objc func tapNextButton() {
-        let next = SignupNicknameViewController()
-        navigationController?.pushViewController(next, animated: true)
+        let nicknameVC = SignupNicknameViewController()
+        navigationController?.pushViewController(nicknameVC, animated: true)
     }
     
     override func viewDidLoad() {
@@ -93,11 +87,7 @@ class SignupPasswordViewController: BaseViewController {
     }
     
     override func addView() {
-        view.addSubview(authHeader)
-        view.addSubview(signupPasswordRequirements)
-        view.addSubview(passwordTextField)
-        view.addSubview(checkPasswordTextField)
-        view.addSubview(nextButton)
+        view.addSubviews(authHeader, signupPasswordRequirements, passwordTextField, checkPasswordTextField, nextButton)
     }
     
     override func location() {

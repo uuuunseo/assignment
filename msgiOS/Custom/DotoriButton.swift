@@ -2,10 +2,11 @@ import UIKit
 
 public final class DotoriButton: UIButton {
         
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
+    public init(setTitle: String) {
+        super.init(frame: .zero)
         
         setup()
+        self.setTitle(setTitle, for: .normal)
     }
     
     required init?(coder: NSCoder) {
