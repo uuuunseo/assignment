@@ -1,7 +1,7 @@
 import UIKit
 
 final class FindPasswordViewController: BaseViewController {
-    
+    // MARK: - Properties
     private let findPasswordLabel = UILabel().then{
         $0.text = "비밀번호 찾기"
         $0.font = UIFont.systemFont(ofSize: 20)
@@ -13,6 +13,7 @@ final class FindPasswordViewController: BaseViewController {
         $0.setImage(UIImage(systemName: "multiply"), for: .normal)
     }
     
+    // MARK: - Functions
     override func addTarget() {
         findPasswordBackButton.addTarget(self, action: #selector(tapFindPasswordBackButton), for: .touchUpInside)
     }
@@ -21,6 +22,7 @@ final class FindPasswordViewController: BaseViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - UI
     override func addView() {
         view.addSubviews(findPasswordLabel, findPasswordBackButton)
     }

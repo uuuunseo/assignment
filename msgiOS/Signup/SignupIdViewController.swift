@@ -1,16 +1,14 @@
 import UIKit
 
 final class SignupIdViewController: BaseViewController {
-    
-    lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
+    // MARK: - Properties
+    private let chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: SignupIdViewController.self, action: nil).then{
         $0.tintColor = .black
     }
     
     private let authHeader = DotoriAuthHeaderView(text: "사용하실 아이디를 입력해주세요")
-    
     private let signupIdTextfield = DotoriTextField(placeholder: "아이디")
-    
-    var nextButton = DotoriButton(setTitle: "다음")
+    private let nextButton = DotoriButton(setTitle: "다음")
     
     private let signupIdRequirements = UILabel().then{
         $0.text = "아이디는 최소 4자에서 최대 20자까지 가능합니다."
@@ -18,6 +16,7 @@ final class SignupIdViewController: BaseViewController {
         $0.textColor = .gray
     }
     
+    // MARK: - Functions
     @objc func tapNextButton() {
         let passwordVC = SignupPasswordViewController()
         navigationController?.pushViewController(passwordVC, animated: true)
@@ -29,6 +28,7 @@ final class SignupIdViewController: BaseViewController {
         signupIdTextfield.delegate = self
     }
     
+    // MARK: - UI
     override func setup() {
         self.navigationItem.title = "회원가입"
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
@@ -58,11 +58,12 @@ final class SignupIdViewController: BaseViewController {
     }
 }
 
+// MARK: - extension
 extension SignupIdViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
         if let count = signupIdTextfield.text?.count, count >= 4 && count <= 20 {
-            nextButton.backgroundColor = UIColor(named: "ButtonColor")
+            nextButton.backgroundColor = .buttonColor
             nextButton.isUserInteractionEnabled = true
             nextButton.addTarget(self, action: #selector(tapNextButton), for: .touchUpInside)
         } else {

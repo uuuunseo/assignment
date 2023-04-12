@@ -1,7 +1,7 @@
 import UIKit
 
 final class FindIdViewController: BaseViewController{
-    
+    // MARK: - Properties
     private let findIdLabel = UILabel().then{
         $0.text = "아이디 찾기"
         $0.font = UIFont.systemFont(ofSize: 20)
@@ -13,6 +13,7 @@ final class FindIdViewController: BaseViewController{
         $0.setImage(UIImage(systemName: "multiply"), for: .normal)
     }
     
+    // MARK: - Functions
     override func addTarget() {
         findIdBackButton.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
     }
@@ -21,6 +22,7 @@ final class FindIdViewController: BaseViewController{
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - UI
     override func addView() {
         view.addSubviews(findIdLabel, findIdBackButton)
     }

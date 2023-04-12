@@ -1,25 +1,15 @@
 import UIKit
 
 final class SignupPasswordViewController: BaseViewController {
-    
-    var passwordEyeButton = UIButton(type: .custom)
-    var checkPasswordEyeButton = UIButton(type: .custom)
-    
-    lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
+    // MARK: - Properties
+    private let chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: SignupPasswordViewController.self, action: nil).then{
         $0.tintColor = .black
     }
     
-    var nextButton = DotoriButton(setTitle: "다음")
-    
+    private let nextButton = DotoriButton(setTitle: "다음")
     private let authHeader = DotoriAuthHeaderView(text: "사용하실 비밀번호를 입력해주세요")
-    
-    private let passwordTextField = DotoriTextField(placeholder: "비밀번호").then{
-        $0.isSecureTextEntry = true
-    }
-    
-    private let checkPasswordTextField = DotoriTextField(placeholder: "비밀번호 재입력").then{
-        $0.isSecureTextEntry = true
-    }
+    private let passwordTextField = DotoriPasswordTextField(placeholder: "비밀번호")
+    private let checkPasswordTextField = DotoriPasswordTextField(placeholder: "비밀번호 재입력")
     
     private let signupPasswordRequirements = UILabel().then{
         $0.text = "비밀번호는 최소 8자에서 최대 40자까지 가능합니다."
@@ -27,60 +17,20 @@ final class SignupPasswordViewController: BaseViewController {
         $0.textColor = .gray
     }
     
-    private func passwordShownButtonImage() {
-        passwordEyeButton = UIButton.init(primaryAction: UIAction(handler: { [weak self]_ in
-            self?.passwordTextField.isSecureTextEntry.toggle()
-            self?.passwordEyeButton.isSelected.toggle()
-        }))
-        
-        var buttonConfiguration = UIButton.Configuration.plain()
-        buttonConfiguration.imagePadding = 10
-        buttonConfiguration.baseBackgroundColor = .clear
-        
-        passwordEyeButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        passwordEyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
-        passwordEyeButton.configuration = buttonConfiguration
-        passwordEyeButton.tintColor = .gray
-        
-        self.passwordTextField.rightView = passwordEyeButton
-        self.passwordTextField.rightViewMode = .always
-    }
-    
-    private func checkPasswordShownButtonImage() {
-        checkPasswordEyeButton = UIButton.init(primaryAction: UIAction(handler: { [weak self]_ in
-            self?.checkPasswordTextField.isSecureTextEntry.toggle()
-            self?.checkPasswordTextField.isSelected.toggle()
-        }))
-        
-        var buttonConfiguration = UIButton.Configuration.plain()
-        buttonConfiguration.imagePadding = 10
-        buttonConfiguration.baseBackgroundColor = .clear
-        
-        checkPasswordEyeButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        checkPasswordEyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
-        checkPasswordEyeButton.configuration = buttonConfiguration
-        checkPasswordEyeButton.tintColor = .gray
-        
-        self.checkPasswordTextField.rightView = checkPasswordEyeButton
-        self.checkPasswordTextField.rightViewMode = .always
-    }
-    
+    //MARK: Functions
     @objc func tapNextButton() {
         let nicknameVC = SignupNicknameViewController()
         navigationController?.pushViewController(nicknameVC, animated: true)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        passwordShownButtonImage()
-        checkPasswordShownButtonImage()
-        
         passwordTextField.delegate = self
         checkPasswordTextField.delegate = self
-        
     }
     
+    // MARK: - UI
     override func setup() {
         self.navigationItem.title = "회원가입"
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
@@ -91,8 +41,7 @@ final class SignupPasswordViewController: BaseViewController {
     }
     
     override func location() {
-        
-        signupPasswordRequirements.snp.makeConstraints {
+            signupPasswordRequirements.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(24)
             $0.top.equalTo(authHeader.snp.bottom).offset(220)
         }
@@ -117,6 +66,7 @@ final class SignupPasswordViewController: BaseViewController {
     }
 }
 
+// MARK: - extension
 extension SignupPasswordViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         

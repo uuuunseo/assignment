@@ -1,106 +1,64 @@
 import UIKit
 
 final class LoginViewController: BaseViewController {
-    
-    var eyeButton = UIButton(type: .custom)
-    
-    lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
+    // MARK: - Properties
+    private let chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: LoginViewController.self, action: nil).then{
         $0.tintColor = .black
     }
     
     private let loginEmailTextField = DotoriTextField(placeholder: "아이디")
+    private let loginPasswordTextField = DotoriPasswordTextField(placeholder: "비밀번호")
+    private let authHeaderView = DotoriAuthHeaderView(text: "더 편한 기숙사 생활을 위해")
     
-    private let loginPasswordTextField = DotoriTextField(placeholder: "비밀번호")
+    private let contourView = UIView().then{
+        $0.backgroundColor = .gray
+    }
     
-    lazy var findIdButton = UIButton().then{
+    private let findIdButton = UIButton().then{
         $0.setTitle("아이디찾기", for: .normal)
         $0.setTitleColor(UIColor.gray, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
     }
     
-    lazy var resetPasswordButton = UIButton().then{
+    private let resetPasswordButton = UIButton().then{
         $0.setTitle("비밀번호재설정", for: .normal)
         $0.setTitleColor(UIColor.gray, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
     }
     
-    lazy var signupButton = UIButton().then{
-        $0.setTitle("회원가입", for: .normal)
+    private let signupButton = UIButton().then{
+        $0.setTitle("아직 회원이 아니신가요?   회원가입", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         $0.setTitleColor(UIColor.black, for: .normal)
     }
     
-    lazy var loginButton = UIButton().then{
+    private let loginButton = UIButton().then{
         $0.setTitle("로그인", for: .normal)
         $0.backgroundColor = .gray
         $0.layer.cornerRadius = 8
     }
     
-    private let contourImageView = UIImageView().then{
-        $0.image = UIImage(named: "Line 3")
-    }
-    
-    private let authHeaderView = DotoriAuthHeaderView(text: "더 편한 기숙사 생활을 위해")
-    
-    private let signupQuestionLabel = UILabel().then{
-        $0.text = "아직 회원이 아니신가요?"
-        $0.font = UIFont.systemFont(ofSize: 12)
-        $0.textColor = .gray
-    }
-    
-    private func setPasswordShownButtonImage() {
-        eyeButton = UIButton.init(primaryAction: UIAction(handler: { [weak self]_ in
-            self?.loginPasswordTextField.isSecureTextEntry.toggle()
-            self?.eyeButton.isSelected.toggle()
-        }))
-        
-        var buttonConfiguration = UIButton.Configuration.plain()
-        buttonConfiguration.imagePadding = 10
-        buttonConfiguration.baseBackgroundColor = .clear
-        
-        eyeButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
-        eyeButton.configuration = buttonConfiguration
-        eyeButton.tintColor = .gray
-        
-        self.loginPasswordTextField.rightView = eyeButton
-        self.loginPasswordTextField.rightViewMode = .always
-    }
-    
+    // MARK: - Functions
     @objc func tapLoginButton() {
-        let main = MainViewController()
-        navigationController?.setViewControllers([main], animated: true)
+        let mainVC = MainViewController()
+        navigationController?.setViewControllers([mainVC], animated: true)
     }
     
     @objc func tapFindIdButton() {
-        let id = FindIdViewController()
-        id.modalTransitionStyle = .coverVertical
-        self.present(id, animated: true, completion: nil)
+        let idVC = FindIdViewController()
+        idVC.modalTransitionStyle = .coverVertical
+        self.present(idVC, animated: true, completion: nil)
     }
     
     @objc func tapFindPasswordButton() {
-        let password = FindPasswordViewController()
-        password.modalPresentationStyle = .fullScreen
-        self.present(password, animated: true, completion: nil)
+        let passwordVC = FindPasswordViewController()
+        passwordVC.modalPresentationStyle = .fullScreen
+        self.present(passwordVC, animated: true, completion: nil)
     }
     
     @objc func tapSingnupButton() {
-        let signup = SignupIdViewController()
-        navigationController?.pushViewController(signup, animated: true)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setPasswordShownButtonImage()
-        
-        loginEmailTextField.delegate = self
-        loginPasswordTextField.delegate = self
-    }
-    
-    override func setup() {
-        self.navigationItem.title = "로그인"
-        self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
+        let signupVC = SignupIdViewController()
+        navigationController?.pushViewController(signupVC, animated: true)
     }
     
     override func addTarget() {
@@ -109,8 +67,22 @@ final class LoginViewController: BaseViewController {
         findIdButton.addTarget(self, action: #selector(tapFindIdButton), for: .touchUpInside)
     }
     
+    // MARK: - View Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loginEmailTextField.delegate = self
+        loginPasswordTextField.delegate = self
+    }
+    
+    // MARK: - UI
+    override func setup() {
+        self.navigationItem.title = "로그인"
+        self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
+    }
+    
     override func addView() {
-        view.addSubviews(authHeaderView, loginEmailTextField, loginPasswordTextField, findIdButton, contourImageView, resetPasswordButton, signupQuestionLabel, signupButton, loginButton)
+        view.addSubviews(authHeaderView, loginEmailTextField, loginPasswordTextField, findIdButton, contourView, resetPasswordButton, signupButton, loginButton)
     }
     
     override func location() {
@@ -132,14 +104,15 @@ final class LoginViewController: BaseViewController {
             $0.top.equalTo(loginPasswordTextField.snp.bottom).offset(24)
         }
         
-        contourImageView.snp.makeConstraints{
+        contourView.snp.makeConstraints{
             $0.top.equalTo(loginPasswordTextField.snp.bottom).offset(30)
             $0.leading.equalTo(findIdButton.snp.trailing).offset(16)
-            $0.height.equalTo(15)
+            $0.height.equalTo(13)
+            $0.width.equalTo(1)
         }
         
         resetPasswordButton.snp.makeConstraints{
-            $0.leading.equalTo(contourImageView.snp.trailing).offset(16)
+            $0.leading.equalTo(contourView.snp.trailing).offset(16)
             $0.top.equalTo(loginPasswordTextField.snp.bottom).offset(24)
         }
         
@@ -149,18 +122,14 @@ final class LoginViewController: BaseViewController {
             $0.height.equalTo(52)
         }
         
-        signupQuestionLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(108)
-            $0.bottom.equalTo(loginButton.snp.top).offset(-36)
-        }
-        
         signupButton.snp.makeConstraints{
-            $0.leading.equalTo(signupQuestionLabel.snp.trailing).offset(8)
+            $0.leading.equalToSuperview().offset(108)
             $0.bottom.equalTo(loginButton.snp.top).offset(-30)
         }
     }
 }
 
+// MARK: - extension
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if loginEmailTextField.text?.count == 0 || loginPasswordTextField.text?.count == 0 {
@@ -168,7 +137,7 @@ extension LoginViewController: UITextFieldDelegate {
         } else {
             loginButton.isUserInteractionEnabled = true
             loginButton.addTarget(self, action: #selector(tapLoginButton), for: .touchUpInside)
-            loginButton.backgroundColor = UIColor(named: "ButtonColor")
+            loginButton.backgroundColor = .buttonColor
         }
     }
     

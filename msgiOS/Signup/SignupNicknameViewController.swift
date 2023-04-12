@@ -1,17 +1,13 @@
 import UIKit
 
 final class SignupNicknameViewController: BaseViewController {
-    
-    lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
+    // MARK: - Properties
+    private let chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: SignupNicknameViewController.self, action: nil).then{
         $0.tintColor = .black
     }
     
     private let authHeader = DotoriAuthHeaderView(text: "사용하실 닉네임을 입력해주세요")
-    
-    private let nicknameTextField = DotoriTextField(placeholder: "닉네임").then{
-        $0.isSecureTextEntry = true
-    }
-    
+    private let nicknameTextField = DotoriTextField(placeholder: "닉네임")
     private let nextButton = DotoriButton(setTitle: "다음")
     
     private let signupNicknameRequirements = UILabel().then{
@@ -20,17 +16,19 @@ final class SignupNicknameViewController: BaseViewController {
         $0.textColor = .gray
     }
     
+    // MARK: - Functions
     @objc func tapNextButton() {
         let completeVC = SignupCompleteViewController()
         navigationController?.pushViewController(completeVC, animated: true)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         nicknameTextField.delegate = self
     }
     
+    // MARK: - UI
     override func setup() {
         self.navigationItem.title = "회원가입"
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem
@@ -61,10 +59,11 @@ final class SignupNicknameViewController: BaseViewController {
     }
 }
 
+// MARK: - extension
 extension SignupNicknameViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if let count = nicknameTextField.text?.count, count >= 4 && count <= 20 {
-            nextButton.backgroundColor = UIColor(named: "ButtonColor")
+            nextButton.backgroundColor = .buttonColor
             nextButton.isUserInteractionEnabled = true
             nextButton.addTarget(self, action: #selector(tapNextButton), for: .touchUpInside)
         } else {

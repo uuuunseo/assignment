@@ -1,13 +1,13 @@
 import UIKit
 
 final class SignupCompleteViewController: BaseViewController {
-    
-    lazy var chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil).then{
+    // MARK: - Properties
+    private let chevronBackBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: SignupCompleteViewController.self, action: nil).then{
         $0.tintColor = .black
     }
     
-    var goLoginButton = DotoriButton(setTitle: "로그인 하러가기").then{
-        $0.backgroundColor = UIColor(named: "ButtonColor")
+    private let goLoginButton = DotoriButton(setTitle: "로그인 하러가기").then{
+        $0.backgroundColor = .buttonColor
     }
     
     private let completeTitleLabel = UILabel().then{
@@ -23,12 +23,12 @@ final class SignupCompleteViewController: BaseViewController {
         $0.textAlignment = .center
     }
     
-    
+    // MARK: - Function
     @objc func tapGoLoginButton() {
-        let loginVC = LoginViewController()
-        navigationController?.pushViewController(loginVC, animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
+    // MARK: - UI
     override func setup() {
         self.navigationItem.title = "회원가입"
         self.navigationItem.backBarButtonItem = chevronBackBarButtonItem

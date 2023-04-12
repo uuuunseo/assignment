@@ -1,7 +1,7 @@
 import UIKit
 
 public final class DotoriButton: UIButton {
-        
+
     public init(setTitle: String) {
         super.init(frame: .zero)
         

@@ -14,6 +14,9 @@
 		D017432629D26E1F000429C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D017432429D26E1F000429C7 /* LaunchScreen.storyboard */; };
 		D017432E29D26EAB000429C7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017432D29D26EAB000429C7 /* BaseViewController.swift */; };
 		D017F3C129E59F4100B846E9 /* UIView+addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017F3C029E59F4100B846E9 /* UIView+addSubviews.swift */; };
+		D088318629E698B100DBB31B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088318529E698B100DBB31B /* UIColor.swift */; };
+		D088318829E6A95500DBB31B /* DotoriPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088318729E6A95500DBB31B /* DotoriPasswordTextField.swift */; };
+		D088318B29E70A3B00DBB31B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D088318A29E70A3B00DBB31B /* Alamofire */; };
 		D0A9F3B529D2FA63005BEFBB /* UITextField+leftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */; };
 		D0A9F3BB29D32624005BEFBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3BA29D32624005BEFBB /* MainViewController.swift */; };
 		D0A9F3C129D32D98005BEFBB /* SignupIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9F3C029D32D98005BEFBB /* SignupIdViewController.swift */; };
@@ -39,6 +42,8 @@
 		D017432729D26E1F000429C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D017432D29D26EAB000429C7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D017F3C029E59F4100B846E9 /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
+		D088318529E698B100DBB31B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D088318729E6A95500DBB31B /* DotoriPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotoriPasswordTextField.swift; sourceTree = "<group>"; };
 		D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+leftPadding.swift"; sourceTree = "<group>"; };
 		D0A9F3BA29D32624005BEFBB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D0A9F3C029D32D98005BEFBB /* SignupIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupIdViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D088318B29E70A3B00DBB31B /* Alamofire in Frameworks */,
 				D0A9F3D229D80670005BEFBB /* Then in Frameworks */,
 				D0A9F3CF29D5A707005BEFBB /* SnapKit in Frameworks */,
 			);
@@ -88,7 +94,7 @@
 				D0EDD66929E068C900A78FF2 /* Login */,
 				D0EDD66829E068BD00A78FF2 /* Main */,
 				D0E3665E29DF2FD700C53B6E /* Signup */,
-				D0FEEEE929DAAF11006C412C /* Custom */,
+				D0FEEEE929DAAF11006C412C /* CustomView */,
 				D0A9F3CA29D3E052005BEFBB /* Base */,
 				D0A9F3B129D2F9C7005BEFBB /* Extension */,
 				D017431829D26E1E000429C7 /* SceneDelegate.swift */,
@@ -105,6 +111,7 @@
 			children = (
 				D017F3C029E59F4100B846E9 /* UIView+addSubviews.swift */,
 				D0A9F3B429D2FA63005BEFBB /* UITextField+leftPadding.swift */,
+				D088318529E698B100DBB31B /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -153,14 +160,15 @@
 			path = Find;
 			sourceTree = "<group>";
 		};
-		D0FEEEE929DAAF11006C412C /* Custom */ = {
+		D0FEEEE929DAAF11006C412C /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
 				D0E3665729DEDC9100C53B6E /* DotoriAuthHeaderView.swift */,
 				D0E3665929DEF90200C53B6E /* DotoriButton.swift */,
 				D0E3665B29DF205200C53B6E /* DotoriTextField.swift */,
+				D088318729E6A95500DBB31B /* DotoriPasswordTextField.swift */,
 			);
-			path = Custom;
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +190,7 @@
 			packageProductDependencies = (
 				D0A9F3CE29D5A707005BEFBB /* SnapKit */,
 				D0A9F3D129D80670005BEFBB /* Then */,
+				D088318A29E70A3B00DBB31B /* Alamofire */,
 			);
 			productName = msgiOS;
 			productReference = D017431329D26E1E000429C7 /* msgiOS.app */;
@@ -214,6 +223,7 @@
 			packageReferences = (
 				D0A9F3CD29D5A707005BEFBB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D0A9F3D029D80670005BEFBB /* XCRemoteSwiftPackageReference "Then" */,
+				D088318929E70A3B00DBB31B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = D017431429D26E1E000429C7 /* Products */;
 			projectDirPath = "";
@@ -242,11 +252,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A9F3C129D32D98005BEFBB /* SignupIdViewController.swift in Sources */,
+				D088318829E6A95500DBB31B /* DotoriPasswordTextField.swift in Sources */,
 				D017432E29D26EAB000429C7 /* BaseViewController.swift in Sources */,
 				D0A9F3C329D32E82005BEFBB /* FindIdViewController.swift in Sources */,
 				D0E3665A29DEF90200C53B6E /* DotoriButton.swift in Sources */,
 				D0A9F3B529D2FA63005BEFBB /* UITextField+leftPadding.swift in Sources */,
 				D0EDD66529E05A4D00A78FF2 /* SignupNicknameViewController.swift in Sources */,
+				D088318629E698B100DBB31B /* UIColor.swift in Sources */,
 				D0EDD66729E060E200A78FF2 /* SignupCompleteViewController.swift in Sources */,
 				D017431B29D26E1E000429C7 /* LoginViewController.swift in Sources */,
 				D017F3C129E59F4100B846E9 /* UIView+addSubviews.swift in Sources */,
@@ -466,6 +478,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D088318929E70A3B00DBB31B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		D0A9F3CD29D5A707005BEFBB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -485,6 +505,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D088318A29E70A3B00DBB31B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D088318929E70A3B00DBB31B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		D0A9F3CE29D5A707005BEFBB /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D0A9F3CD29D5A707005BEFBB /* XCRemoteSwiftPackageReference "SnapKit" */;
